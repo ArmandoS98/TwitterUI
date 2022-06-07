@@ -82,8 +82,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/drawee_user_photo_nav"
                         android:layout_marginStart="10dp"
-                        android:textColor="@android:color/black"
                         android:text="Smartemboser"
+                        android:textColor="@android:color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -213,13 +213,34 @@
             android:layout_height="match_parent"
             android:layout_marginTop="?attr/actionBarSize">
 
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:background="@color/md_theme_dark_secondary"
+                app:layout_constraintBottom_toTopOf="@+id/nav_host_fragment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:background="@color/md_theme_dark_secondary"
+                app:layout_constraintBottom_toTopOf="@+id/nav_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
             <!--Bottom Navigation View-->
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/nav_view"
+                style="@style/Theme.TwitterUI.BottomNav"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
+                android:background="?android:attr/windowBackground"
                 app:labelVisibilityMode="unlabeled"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

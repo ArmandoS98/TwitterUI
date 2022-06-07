@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     //Inits
     private var items = arrayListOf(
-        NavigationItemModel(R.drawable.ic_profile, "Profile"),
+        NavigationItemModel(R.drawable.ic_profile,"Profile"),
         NavigationItemModel(R.drawable.ic_lists, "Lists"),
         NavigationItemModel(R.drawable.ic_topics, "Topics"),
         NavigationItemModel(R.drawable.ic_bookmark, "Bookmarks"),
@@ -110,6 +110,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val navView: BottomNavigationView = binding.navView
+        navView.itemIconTintList = null
         val navController = findNavController(R.id.nav_host_fragment)
         navView.setupWithNavController(navController)
     }

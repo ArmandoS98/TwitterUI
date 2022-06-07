@@ -33,4 +33,8 @@
         <item name="android:background">@color/md_theme_light_onSecondary</item>
     </style>
 
+    <style name="Theme.TwitterUI.BottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="colorPrimary">@color/md_theme_light_shadow</item>
+        <item name="colorOnPrimary">@color/md_theme_light_shadow</item>
+    </style>
 </resources>

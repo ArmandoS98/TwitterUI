@@ -3,31 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/home_selector"
         android:title="@string/home"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_search"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/search_selector"
         android:title="@string/search"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_reconding"
-        android:icon="@drawable/ic_audios"
+        android:icon="@drawable/audio_selector"
         android:title="@string/reconding"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_notification"
-        android:icon="@drawable/ic_notifications"
+        android:icon="@drawable/notification_selector"
         android:title="@string/notification"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/nav_inbox"
-        android:icon="@drawable/ic_messages"
+        android:icon="@drawable/messages_selector"
         android:title="@string/inbox"
         app:showAsAction="ifRoom" />
 </menu>
