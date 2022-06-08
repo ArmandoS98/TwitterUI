@@ -2,6 +2,7 @@ package com.techun.twitterui.ui.drawerNavigationView
 
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -15,7 +16,12 @@ abstract class NavigationBaseRVAdapter(private val layoutId: Int) :
     class GameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = RowNavDrawerBinding.bind(itemView)
         fun render(game: NavigationItemModel) {
-            binding.navigationIcon.loadByResource(game.icon!!)
+            val image = game.icon
+            if (image != null)
+                binding.navigationIcon.loadByResource(game.icon!!)
+            else
+                binding.navigationIcon.visibility = GONE
+
             binding.navigationTitle.text = game.title
         }
     }
@@ -52,14 +58,14 @@ abstract class NavigationBaseRVAdapter(private val layoutId: Int) :
         )
     }
 
-    protected var onItemClickListener: ((NavigationItemModel) -> Unit)? = null
-    protected var onDeleteClickListener: ((NavigationItemModel) -> Unit)? = null
+    protected var onItemClickListener: ((Int) -> Unit)? = null
+    protected var onDeleteClickListener: ((Int) -> Unit)? = null
 
-    fun setItemClickListener(listener: (NavigationItemModel) -> Unit) {
+    fun setItemClickListener(listener: (Int) -> Unit) {
         onItemClickListener = listener
     }
 
-    fun setDeleteClickListener(listener: (NavigationItemModel) -> Unit) {
+    fun setDeleteClickListener(listener: (Int) -> Unit) {
         onDeleteClickListener = listener
     }
 

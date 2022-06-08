@@ -14,7 +14,7 @@ class NavigationRVAdapter @Inject constructor() : NavigationBaseRVAdapter(R.layo
         holder.itemView.apply {
             setOnClickListener {
                 onItemClickListener?.let { click ->
-                    click(game)
+                    click(position)
                 }
             }
         }

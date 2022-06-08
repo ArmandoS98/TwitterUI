@@ -1,26 +1,22 @@
 package com.techun.twitterui.ui
 
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.techun.twitterui.R
 import com.techun.twitterui.databinding.ActivityMainBinding
-import com.techun.twitterui.ui.drawerNavigationView.ClickListener
 import com.techun.twitterui.ui.drawerNavigationView.NavigationItemModel
 import com.techun.twitterui.ui.drawerNavigationView.NavigationRVAdapter
-import com.techun.twitterui.ui.drawerNavigationView.RecyclerTouchListener
-import com.techun.twitterui.utils.toast
+import com.techun.twitterui.ui.drawerNavigationView.ui.*
+import com.techun.twitterui.utils.goToActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -32,10 +28,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myToggle: ActionBarDrawerToggle
     private lateinit var myDrawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
-    private lateinit var adapter: NavigationRVAdapter
 
     @Inject
-    lateinit var gameAdapter: NavigationRVAdapter
+    lateinit var firstOptionesDrawer: NavigationRVAdapter
+
+    @Inject
+    lateinit var secondOptionesDrawer: NavigationRVAdapter
+
+    @Inject
+    lateinit var thirdOptionesDrawer: NavigationRVAdapter
 
     //Inits
     private var items = arrayListOf(
@@ -63,23 +64,8 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
-        initListener()
-
-        myDrawerLayout = binding.drawerLayout
-        navigationView = binding.navigationView
-        myToggle = ActionBarDrawerToggle(this, myDrawerLayout, R.string.open, R.string.close)
-        myDrawerLayout.addDrawerListener(myToggle)
-        myToggle.syncState()
-        binding.civDrawerUserPhotoToolbar.setOnClickListener {
-            if (myDrawerLayout.isDrawerOpen(navigationView)) {
-                myDrawerLayout.closeDrawer(navigationView)
-            } else {
-                myDrawerLayout.openDrawer(navigationView)
-            }
-        }
-
-        /*gameAdapter.submitList(items)
         recyclerInit()
+        initListener()
 
         myDrawerLayout = binding.drawerLayout
         navigationView = binding.navigationView
@@ -95,8 +81,6 @@ class MainActivity : AppCompatActivity() {
                 myDrawerLayout.openDrawer(navigationView)
             }
         }
-
-        initListener()
 
         val navView: BottomNavigationView = binding.navView
         navView.itemIconTintList = null
@@ -140,24 +124,73 @@ class MainActivity : AppCompatActivity() {
                     binding.etToolbar.visibility = View.GONE
                 }
             }
-        }*/
+        }
     }
 
     private fun initListener() {
-        binding.llProfile.setOnClickListener {
-            toast("Holis")
-        }
-        gameAdapter.setItemClickListener {
-            toast("Holis")
+        firstOptionesDrawer.setItemClickListener { position ->
+            when (position) {
+                0 -> {
+                    goToActivity<ProfileActivity>()
+                }
+                1 -> {
+                    goToActivity<ListActivity>()
+                }
+                2 -> {
+                    goToActivity<TopicsActivity>()
+                }
+                3 -> {
+                    goToActivity<BookmarksActivity>()
+                }
+                4 -> {
+                    goToActivity<MomentsActivity>()
+                }
+                5 -> {
+                    goToActivity<MonetizationActivity>()
+                }
+            }
+            myDrawerLayout.closeDrawer(navigationView)
         }
 
-        gameAdapter.setDeleteClickListener {
-            toast("Holis")
+        secondOptionesDrawer.setItemClickListener { position ->
+            when (position) {
+                0 -> {
+                    goToActivity<TwitterForProfessionalsActivity>()
+                }
+            }
+            myDrawerLayout.closeDrawer(navigationView)
+        }
+
+        thirdOptionesDrawer.setItemClickListener { position ->
+            when (position) {
+                0 -> {
+                    goToActivity<SettingsAndPrivacyActivity>()
+                }
+                1 -> {
+                    goToActivity<HelpCenterActivity>()
+                }
+            }
+            myDrawerLayout.closeDrawer(navigationView)
         }
     }
 
-  /*  private fun recyclerInit() = binding.navigationRv.apply {
-        adapter = gameAdapter
-        layoutManager = LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, false)
-    }*/
+    private fun recyclerInit() {
+        firstOptionesDrawer.submitList(items)
+        binding.navigationRv.apply {
+            adapter = firstOptionesDrawer
+            layoutManager = LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, false)
+        }
+
+        secondOptionesDrawer.submitList(items2)
+        binding.navigationRv2.apply {
+            adapter = secondOptionesDrawer
+            layoutManager = LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, false)
+        }
+
+        thirdOptionesDrawer.submitList(items3)
+        binding.navigationRv3.apply {
+            adapter = thirdOptionesDrawer
+            layoutManager = LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, false)
+        }
+    }
 }
