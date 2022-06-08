@@ -177,51 +177,108 @@
                     android:layout_marginBottom="10dp"
                     android:background="@color/md_theme_dark_secondary" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/navigationRv"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/separator1"
-                    android:overScrollMode="ifContentScrolls"
-                    android:scrollbarThumbVertical="@null" />
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/container_user_info">
 
-                <View
-                    android:id="@+id/separator2"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_below="@id/navigationRv"
-                    android:layout_marginBottom="10dp"
-                    android:background="@color/md_theme_dark_secondary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/navigationRv2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/separator2"
-                    android:overScrollMode="never"
-                    android:scrollbarThumbHorizontal="@null"
-                    android:scrollbarThumbVertical="@null" />
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/llProfile"
+                            android:textColor="@android:color/black"
+                            android:text="Holis"/>
+                       <!-- <LinearLayout
+                            android:id="@+id/llProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal"
+                            android:padding="3sp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="0dp">
 
-                <View
-                    android:id="@+id/separator3"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_below="@id/navigationRv2"
-                    android:layout_marginBottom="10dp"
-                    android:background="@color/md_theme_dark_secondary" />
+                            <ImageView
+                                android:id="@+id/navigation_icon"
+                                android:layout_width="25sp"
+                                android:layout_height="25sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5sp"
+                                android:backgroundTint="@android:color/black"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_profile"
+                                tools:ignore="ContentDescription" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/navigationRv3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/separator3"
-                    android:overScrollMode="never"
-                    android:scrollbarThumbHorizontal="@null"
-                    android:scrollbarThumbVertical="@null" />
+                            <TextView
+                                android:id="@+id/navigation_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="35sp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/profile"
+                                android:textColor="#000000"
+                                android:textSize="18sp" />
+                        </LinearLayout>-->
+                    </LinearLayout>
+                </ScrollView>
+
+
+                <!--   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/navigationRv"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@id/separator1"
+                       android:overScrollMode="ifContentScrolls"
+                       android:scrollbarThumbVertical="@null"
+                       android:visibility="gone" />
+
+                   <View
+                       android:id="@+id/separator2"
+                       android:layout_width="match_parent"
+                       android:layout_height="0.5dp"
+                       android:layout_below="@id/navigationRv"
+                       android:layout_marginBottom="10dp"
+                       android:background="@color/md_theme_dark_secondary" />
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/navigationRv2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:visibility="gone"
+                       android:layout_below="@id/separator2"
+                       android:overScrollMode="never"
+                       android:scrollbarThumbHorizontal="@null"
+                       android:scrollbarThumbVertical="@null" />
+
+                   <View
+                       android:id="@+id/separator3"
+                       android:layout_width="match_parent"
+                       android:layout_height="0.5dp"
+                       android:layout_below="@id/navigationRv2"
+                       android:layout_marginBottom="10dp"
+                       android:background="@color/md_theme_dark_secondary" />
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/navigationRv3"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@id/separator3"
+                       android:visibility="gone"
+                       android:overScrollMode="never"
+                       android:scrollbarThumbHorizontal="@null"
+                       android:scrollbarThumbVertical="@null" />-->
             </RelativeLayout>
 
         </com.google.android.material.navigation.NavigationView>
 
+        <!--BottomNavigationView-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

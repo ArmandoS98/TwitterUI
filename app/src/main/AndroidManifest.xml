@@ -3,6 +3,7 @@
     package="com.techun.twitterui">
 
     <application
+        android:name=".Twitter"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,31 +11,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TwitterUI">
         <activity
-            android:name=".HelpCenterActivity"
+            android:name=".ui.drawerNavigationView.ui.HelpCenterActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsAndPrivacyActivity"
+            android:name=".ui.drawerNavigationView.ui.SettingsAndPrivacyActivity"
             android:exported="false" />
         <activity
-            android:name=".TwitterForProfessionalsActivity"
+            android:name=".ui.drawerNavigationView.ui.TwitterForProfessionalsActivity"
             android:exported="false" />
         <activity
-            android:name=".MonetizationActivity"
+            android:name=".ui.drawerNavigationView.ui.MonetizationActivity"
             android:exported="false" />
         <activity
-            android:name=".MomentsActivity"
+            android:name=".ui.drawerNavigationView.ui.MomentsActivity"
             android:exported="false" />
         <activity
-            android:name=".BookmarksActivity"
+            android:name=".ui.drawerNavigationView.ui.BookmarksActivity"
             android:exported="false" />
         <activity
-            android:name=".TopicsActivity"
+            android:name=".ui.drawerNavigationView.ui.TopicsActivity"
             android:exported="false" />
         <activity
-            android:name=".ListActivity"
+            android:name=".ui.drawerNavigationView.ui.ListActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.drawerNavigationView.ui.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"

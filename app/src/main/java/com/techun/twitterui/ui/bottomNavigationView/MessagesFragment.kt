@@ -5,7 +5,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import com.techun.twitterui.R
 import com.techun.twitterui.databinding.FragmentMessagesBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MessagesFragment : Fragment() {
     private var _binding: FragmentMessagesBinding? = null
     private val binding get() = _binding!!

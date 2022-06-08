@@ -5,8 +5,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import com.techun.twitterui.R
 import com.techun.twitterui.databinding.FragmentNotificationsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class NotificationsFragment : Fragment() {
 
     private var _bindign: FragmentNotificationsBinding? = null

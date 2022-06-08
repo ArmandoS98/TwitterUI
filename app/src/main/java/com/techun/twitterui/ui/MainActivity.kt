@@ -1,13 +1,17 @@
 package com.techun.twitterui.ui
 
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
+import android.widget.LinearLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.techun.twitterui.R
@@ -17,7 +21,10 @@ import com.techun.twitterui.ui.drawerNavigationView.NavigationItemModel
 import com.techun.twitterui.ui.drawerNavigationView.NavigationRVAdapter
 import com.techun.twitterui.ui.drawerNavigationView.RecyclerTouchListener
 import com.techun.twitterui.utils.toast
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -26,6 +33,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myDrawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
     private lateinit var adapter: NavigationRVAdapter
+
+    @Inject
+    lateinit var gameAdapter: NavigationRVAdapter
 
     //Inits
     private var items = arrayListOf(
@@ -53,90 +63,27 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
-        // Setup Recyclerview's Layout
-        binding.navigationRv.layoutManager = LinearLayoutManager(this)
-        binding.navigationRv.setHasFixedSize(true)
-/*
-        binding.navigationRv2.layoutManager = LinearLayoutManager(this)
-        binding.navigationRv2.setHasFixedSize(true)
+        initListener()
 
-        binding.navigationRv3.layoutManager = LinearLayoutManager(this)
-        binding.navigationRv3.setHasFixedSize(true)*/
+        myDrawerLayout = binding.drawerLayout
+        navigationView = binding.navigationView
+        myToggle = ActionBarDrawerToggle(this, myDrawerLayout, R.string.open, R.string.close)
+        myDrawerLayout.addDrawerListener(myToggle)
+        myToggle.syncState()
+        binding.civDrawerUserPhotoToolbar.setOnClickListener {
+            if (myDrawerLayout.isDrawerOpen(navigationView)) {
+                myDrawerLayout.closeDrawer(navigationView)
+            } else {
+                myDrawerLayout.openDrawer(navigationView)
+            }
+        }
+
+        /*gameAdapter.submitList(items)
+        recyclerInit()
 
         myDrawerLayout = binding.drawerLayout
         navigationView = binding.navigationView
 
-        updateAdapter()
-        // Add Item Touch Listener
-        binding.navigationRv.addOnItemTouchListener(
-
-
-
-
-
-            RecyclerTouchListener(
-                this,
-                object : ClickListener {
-                    override fun onClick(view: View, position: Int) {
-                        when (position) {
-                            0 -> {
-                                toast("holis")
-//                                goToActivity<ProfileActivity>(finish = false)
-                            }
-                            1 -> {
-//                                goToActivity<ListActivity>()
-                            }
-                            2 -> {
-//                                goToActivity<TopicsActivity>()
-                            }
-                            3 -> {
-//                                goToActivity<BookmarksActivity>()
-                            }
-                            4 -> {
-//                                goToActivity<MomentsActivity>()
-                            }
-                            5 -> {
-//                                goToActivity<MonetizationActivity>()
-                            }
-                        }
-                        updateAdapter()
-                        myDrawerLayout.closeDrawer(navigationView)
-                    }
-                })
-        )
-    /*    binding.navigationRv2.addOnItemTouchListener(
-            RecyclerTouchListener(
-                this,
-                object : ClickListener {
-                    override fun onClick(view: View, position: Int) {
-                        when (position) {
-                            0 -> {
-                                goToActivity<TwitterForProfessionalsActivity>()
-                            }
-                        }
-                        updateAdapter(position)
-                        myDrawerLayout.closeDrawer(navigationView)
-                    }
-                })
-        )
-        binding.navigationRv3.addOnItemTouchListener(
-            RecyclerTouchListener(
-                this,
-                object : ClickListener {
-                    override fun onClick(view: View, position: Int) {
-                        when (position) {
-                            0 -> {
-                                goToActivity<SettingsAndPrivacyActivity>()
-                            }
-                            1 -> {
-                                goToActivity<HelpCenterActivity>()
-                            }
-                        }
-                        updateAdapter(position)
-                        myDrawerLayout.closeDrawer(navigationView)
-                    }
-                })
-        )*/
         myToggle = ActionBarDrawerToggle(this, myDrawerLayout, R.string.open, R.string.close)
         myDrawerLayout.addDrawerListener(myToggle)
         myToggle.syncState()
@@ -148,6 +95,8 @@ class MainActivity : AppCompatActivity() {
                 myDrawerLayout.openDrawer(navigationView)
             }
         }
+
+        initListener()
 
         val navView: BottomNavigationView = binding.navView
         navView.itemIconTintList = null
@@ -191,16 +140,24 @@ class MainActivity : AppCompatActivity() {
                     binding.etToolbar.visibility = View.GONE
                 }
             }
+        }*/
+    }
+
+    private fun initListener() {
+        binding.llProfile.setOnClickListener {
+            toast("Holis")
+        }
+        gameAdapter.setItemClickListener {
+            toast("Holis")
+        }
+
+        gameAdapter.setDeleteClickListener {
+            toast("Holis")
         }
     }
 
-    private fun updateAdapter() {
-        adapter = NavigationRVAdapter(items)
-        binding.navigationRv.adapter = adapter
-       /* adapter = NavigationRVAdapter(items2, highlightItemPos)
-        binding.navigationRv2.adapter = adapter
-        adapter = NavigationRVAdapter(items3, highlightItemPos)
-        binding.navigationRv3.adapter = adapter*/
-        adapter.notifyDataSetChanged()
-    }
+  /*  private fun recyclerInit() = binding.navigationRv.apply {
+        adapter = gameAdapter
+        layoutManager = LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, false)
+    }*/
 }

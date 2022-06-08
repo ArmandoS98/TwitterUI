@@ -5,7 +5,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import com.techun.twitterui.R
 import com.techun.twitterui.databinding.FragmentAudioBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AudioFragment : Fragment() {
     private var _binding: FragmentAudioBinding? = null
     private val binding get() = _binding!!
