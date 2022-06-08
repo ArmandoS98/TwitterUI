@@ -16,6 +16,7 @@ import com.techun.twitterui.ui.drawerNavigationView.ClickListener
 import com.techun.twitterui.ui.drawerNavigationView.NavigationItemModel
 import com.techun.twitterui.ui.drawerNavigationView.NavigationRVAdapter
 import com.techun.twitterui.ui.drawerNavigationView.RecyclerTouchListener
+import com.techun.twitterui.utils.toast
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -55,41 +56,62 @@ class MainActivity : AppCompatActivity() {
         // Setup Recyclerview's Layout
         binding.navigationRv.layoutManager = LinearLayoutManager(this)
         binding.navigationRv.setHasFixedSize(true)
-
+/*
         binding.navigationRv2.layoutManager = LinearLayoutManager(this)
         binding.navigationRv2.setHasFixedSize(true)
 
         binding.navigationRv3.layoutManager = LinearLayoutManager(this)
-        binding.navigationRv3.setHasFixedSize(true)
+        binding.navigationRv3.setHasFixedSize(true)*/
 
         myDrawerLayout = binding.drawerLayout
         navigationView = binding.navigationView
 
-        updateAdapter(0)
+        updateAdapter()
         // Add Item Touch Listener
         binding.navigationRv.addOnItemTouchListener(
+
+
+
+
+
             RecyclerTouchListener(
                 this,
                 object : ClickListener {
                     override fun onClick(view: View, position: Int) {
                         when (position) {
                             0 -> {
-
+                                toast("holis")
+//                                goToActivity<ProfileActivity>(finish = false)
                             }
                             1 -> {
-
+//                                goToActivity<ListActivity>()
                             }
                             2 -> {
-
+//                                goToActivity<TopicsActivity>()
                             }
                             3 -> {
-
+//                                goToActivity<BookmarksActivity>()
                             }
                             4 -> {
-
+//                                goToActivity<MomentsActivity>()
                             }
                             5 -> {
-
+//                                goToActivity<MonetizationActivity>()
+                            }
+                        }
+                        updateAdapter()
+                        myDrawerLayout.closeDrawer(navigationView)
+                    }
+                })
+        )
+    /*    binding.navigationRv2.addOnItemTouchListener(
+            RecyclerTouchListener(
+                this,
+                object : ClickListener {
+                    override fun onClick(view: View, position: Int) {
+                        when (position) {
+                            0 -> {
+                                goToActivity<TwitterForProfessionalsActivity>()
                             }
                         }
                         updateAdapter(position)
@@ -97,6 +119,24 @@ class MainActivity : AppCompatActivity() {
                     }
                 })
         )
+        binding.navigationRv3.addOnItemTouchListener(
+            RecyclerTouchListener(
+                this,
+                object : ClickListener {
+                    override fun onClick(view: View, position: Int) {
+                        when (position) {
+                            0 -> {
+                                goToActivity<SettingsAndPrivacyActivity>()
+                            }
+                            1 -> {
+                                goToActivity<HelpCenterActivity>()
+                            }
+                        }
+                        updateAdapter(position)
+                        myDrawerLayout.closeDrawer(navigationView)
+                    }
+                })
+        )*/
         myToggle = ActionBarDrawerToggle(this, myDrawerLayout, R.string.open, R.string.close)
         myDrawerLayout.addDrawerListener(myToggle)
         myToggle.syncState()
@@ -154,13 +194,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateAdapter(highlightItemPos: Int) {
-        adapter = NavigationRVAdapter(items, highlightItemPos)
+    private fun updateAdapter() {
+        adapter = NavigationRVAdapter(items)
         binding.navigationRv.adapter = adapter
-        adapter = NavigationRVAdapter(items2, highlightItemPos)
+       /* adapter = NavigationRVAdapter(items2, highlightItemPos)
         binding.navigationRv2.adapter = adapter
         adapter = NavigationRVAdapter(items3, highlightItemPos)
-        binding.navigationRv3.adapter = adapter
+        binding.navigationRv3.adapter = adapter*/
         adapter.notifyDataSetChanged()
     }
 }

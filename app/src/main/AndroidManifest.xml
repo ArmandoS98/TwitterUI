@@ -10,6 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TwitterUI">
         <activity
+            android:name=".HelpCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsAndPrivacyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TwitterForProfessionalsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MonetizationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MomentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookmarksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TopicsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>

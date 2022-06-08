@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.techun.twitterui.databinding.RowNavDrawerBinding
 
 class NavigationRVAdapter(
-    private var items: ArrayList<NavigationItemModel>,
-    private var currentPos: Int
+    private var items: ArrayList<NavigationItemModel>
 ) :
     RecyclerView.Adapter<NavigationRVAdapter.ViewHolder>() {
     private lateinit var context: Context
