@@ -1,19 +1,20 @@
 package com.techun.twitterui.ui.bottomNavigationView
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.techun.twitterui.R
+import com.techun.twitterui.databinding.FragmentAudioBinding
 
 class AudioFragment : Fragment() {
+    private var _binding: FragmentAudioBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_audio, container, false)
+    ): View {
+        _binding = FragmentAudioBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }

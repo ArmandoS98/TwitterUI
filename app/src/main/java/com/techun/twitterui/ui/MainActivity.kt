@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     //Inits
     private var items = arrayListOf(
-        NavigationItemModel(R.drawable.ic_profile,"Profile"),
+        NavigationItemModel(R.drawable.ic_profile, "Profile"),
         NavigationItemModel(R.drawable.ic_lists, "Lists"),
         NavigationItemModel(R.drawable.ic_topics, "Topics"),
         NavigationItemModel(R.drawable.ic_bookmark, "Bookmarks"),
@@ -113,6 +113,45 @@ class MainActivity : AppCompatActivity() {
         navView.itemIconTintList = null
         val navController = findNavController(R.id.nav_host_fragment)
         navView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.nav_home -> {
+                    binding.imgIcon.visibility = View.VISIBLE
+                    binding.tvToolbar.visibility = View.GONE
+                    binding.etToolbar.visibility = View.GONE
+                }
+                R.id.nav_reconding -> {
+                    binding.imgIcon.visibility = View.GONE
+                    binding.etToolbar.visibility = View.GONE
+                    binding.tvToolbar.visibility = View.VISIBLE
+                    binding.tvToolbar.text = getString(R.string.twitter)
+                }
+                R.id.nav_notification -> {
+                    binding.imgIcon.visibility = View.GONE
+                    binding.etToolbar.visibility = View.GONE
+                    binding.tvToolbar.visibility = View.VISIBLE
+                    binding.tvToolbar.text = getString(R.string.notification)
+                }
+                R.id.nav_search -> {
+                    binding.imgIcon.visibility = View.GONE
+                    binding.tvToolbar.visibility = View.GONE
+                    binding.etToolbar.visibility = View.VISIBLE
+                    binding.etToolbar.text = "Search Twitter"
+                }
+                R.id.nav_inbox -> {
+                    binding.imgIcon.visibility = View.GONE
+                    binding.tvToolbar.visibility = View.GONE
+                    binding.etToolbar.visibility = View.VISIBLE
+                    binding.etToolbar.text = "Search Direct Messages"
+                }
+                else -> {
+                    binding.imgIcon.visibility = View.GONE
+                    binding.tvToolbar.visibility = View.GONE
+                    binding.etToolbar.visibility = View.GONE
+                }
+            }
+        }
     }
 
     private fun updateAdapter(highlightItemPos: Int) {

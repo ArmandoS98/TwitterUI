@@ -12,6 +12,7 @@
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/ic_mic_fill.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/messages_selector.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/notification_selector.xml" value="0.28" />
+        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/search_edittext.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/search_selector.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout-v28/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/activity_main.xml" value="0.3096590909090909" />
@@ -23,6 +24,10 @@
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/row_nav_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/home_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/messages_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/notification_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/search_menu.xml" value="0.14722222222222223" />
       </map>
     </option>
   </component>

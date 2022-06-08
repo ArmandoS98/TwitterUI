@@ -34,8 +34,25 @@
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/anya" />
 
+                <TextView
+                    android:id="@+id/tvToolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/etToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/search_edittext"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:visibility="gone" />
+
                 <ImageView
-                    android:id="@+id/custom_title"
+                    android:id="@+id/imgIcon"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center_horizontal"
@@ -52,13 +69,11 @@
             android:id="@+id/navigationView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:overScrollMode="never">
+            android:layout_gravity="start">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:overScrollMode="never">
+                android:layout_height="match_parent">
 
                 <RelativeLayout
                     android:id="@+id/container_user_info"
@@ -167,8 +182,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/separator1"
-                    android:overScrollMode="never"
-                    android:scrollbarThumbHorizontal="@null"
+                    android:overScrollMode="ifContentScrolls"
                     android:scrollbarThumbVertical="@null" />
 
                 <View
