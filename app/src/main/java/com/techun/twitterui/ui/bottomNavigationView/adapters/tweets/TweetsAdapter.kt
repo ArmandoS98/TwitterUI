@@ -1,4 +1,4 @@
-package com.techun.twitterui.ui.bottomNavigationView.adapters
+package com.techun.twitterui.ui.bottomNavigationView.adapters.tweets
 
 import androidx.recyclerview.widget.AsyncListDiffer
 import com.techun.twitterui.R
@@ -12,12 +12,6 @@ class TweetsAdapter @Inject constructor() : TweetsBaseAdapter(R.layout.itemlayou
     override fun onBindViewHolder(holder: TweetViewHolder, position: Int) {
         val bicho = tweets[position]
         holder.render(bicho)
-
-   /*     holder.itemView.findViewById<LinearLayout>(R.id.llComments).setOnClickListener {
-            onDeleteClickListener?.let { click ->
-                click(bicho)
-            }
-        }*/
 
         holder.itemView.apply {
 

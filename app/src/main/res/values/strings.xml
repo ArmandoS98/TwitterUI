@@ -19,4 +19,8 @@
     <string name="like">Like</string>
     <string name="edit">Edit</string>
     <string name="edited">EDITED</string>
+    <string name="happening_now">Happening Now</string>
+    <string name="spaces_going_on_right_now">Spaces going on right now</string>
+    <string name="get_these_in_your_calendar">Get these in your calendar</string>
+    <string name="people_you_follow_will_be_tuning_in">People you follow will be tuning in</string>
 </resources>

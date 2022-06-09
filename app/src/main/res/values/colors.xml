@@ -60,4 +60,12 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="twitterBlue">#1CA1F1</color>
     <color name="twitterBlueDarker">#188CD3</color>
+
+    <!--Colors Cards-->
+    <color name="color_card_one">#930006</color>
+    <color name="color_card_subone">#680003</color>
+    <color name="color_card_second">#004C6D</color>
+    <color name="color_card_subsecond">#00344C</color>
+    <color name="color_card_third">#6D5200</color>
+    <color name="color_card_subthird">#4C3600</color>
 </resources>

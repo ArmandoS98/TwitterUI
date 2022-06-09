@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.techun.twitterui.R
 import com.techun.twitterui.databinding.FragmentHomeBinding
 import com.techun.twitterui.domain.TweetModel
-import com.techun.twitterui.ui.bottomNavigationView.adapters.TweetsAdapter
+import com.techun.twitterui.ui.bottomNavigationView.adapters.tweets.TweetsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

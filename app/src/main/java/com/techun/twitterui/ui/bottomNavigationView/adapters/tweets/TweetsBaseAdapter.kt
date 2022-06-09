@@ -1,4 +1,4 @@
-package com.techun.twitterui.ui.bottomNavigationView.adapters
+package com.techun.twitterui.ui.bottomNavigationView.adapters.tweets
 
 import android.view.LayoutInflater
 import android.view.View
@@ -19,24 +19,24 @@ abstract class TweetsBaseAdapter(private val layoutId: Int) :
     class TweetViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemlayoutTweetBinding.bind(itemView)
         fun render(tweet: TweetModel) {
-            binding.tvTweetEdited.visibility = if (tweet.edited!!) VISIBLE else GONE
-            if (!tweet.image.isNullOrEmpty()) {
-                binding.imgPostTwetter.visibility = VISIBLE
-                binding.imgPostTwetter.loadByResource(tweet.image!!)
-            } else {
-                binding.imgPostTwetter.visibility = GONE
-            }
-            if (!tweet.userImg.isNullOrEmpty()) {
-                binding.profilePhoto.loadByResource(tweet.userImg!!)
-            }else{
-                binding.profilePhoto.loadByResource(R.drawable.egg)
-            }
             binding.tvCommentsCounter.text = tweet.comments.toString()
             binding.tvRetweetsCounter.text = tweet.reTweets.toString()
             binding.tvLikesCounter.text = tweet.likes.toString()
             binding.tvUsername.text = tweet.username
             binding.tvName.text = tweet.name
             binding.tvTweetText.text = tweet.text
+            binding.tvTweetEdited.visibility = if (tweet.edited!!) VISIBLE else GONE
+
+            if (!tweet.userImg.isNullOrEmpty())
+                binding.profilePhoto.loadByResource(tweet.userImg!!)
+            else
+                binding.profilePhoto.loadByResource(R.drawable.egg)
+
+            if (!tweet.image.isNullOrEmpty()) {
+                binding.imgPostTwetter.visibility = VISIBLE
+                binding.imgPostTwetter.loadByResource(tweet.image!!)
+            } else
+                binding.imgPostTwetter.visibility = GONE
         }
     }
 
