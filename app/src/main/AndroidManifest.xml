@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.techun.twitterui">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".Twitter"
         android:allowBackup="true"

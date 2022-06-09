@@ -17,6 +17,15 @@ fun ImageView.loadByResource(resource: Int) =
         .fallback(R.drawable.ic_profile)
         .into(this)
 
+fun ImageView.loadByResource(resource: String) =
+    Glide.with(this)
+        .load(resource)
+        .centerCrop()
+        .placeholder(R.drawable.ic_profile)
+        .error(R.drawable.ic_profile)
+        .fallback(R.drawable.ic_profile)
+        .into(this)
+
 inline fun <reified T : Activity> Activity.goToActivity(
     noinline init: Intent.() -> Unit = {},
     finish: Boolean = false

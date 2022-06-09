@@ -19,6 +19,7 @@ import com.techun.twitterui.ui.drawerNavigationView.NavigationRVAdapter
 import com.techun.twitterui.ui.drawerNavigationView.ui.*
 import com.techun.twitterui.utils.goToActivity
 import com.techun.twitterui.ui.drawerNavigationView.Constants.*
+import com.techun.twitterui.utils.loadByResource
 import com.techun.twitterui.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -68,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
+        init()
         recyclerInit()
         initListener()
 
@@ -221,11 +223,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.fabCompose.setOnClickListener {
             when (fabButtonStates) {
-                HOME -> {toast("Home")}
-                SEARCH -> {toast("Search")}
-                AUDIO -> {toast("Audio")}
-                NOTIFICATIONS -> {toast("Notifications")}
-                INBOX -> {toast("Inbox")}
+                HOME -> {
+                    toast("Home")
+                }
+                SEARCH -> {
+                    toast("Search")
+                }
+                AUDIO -> {
+                    toast("Audio")
+                }
+                NOTIFICATIONS -> {
+                    toast("Notifications")
+                }
+                INBOX -> {
+                    toast("Inbox")
+                }
             }
         }
     }
@@ -248,5 +260,13 @@ class MainActivity : AppCompatActivity() {
             adapter = thirdOptionesDrawer
             layoutManager = LinearLayoutManager(this@MainActivity, LinearLayout.VERTICAL, false)
         }
+    }
+
+    private fun init() {
+        val userPhoto =
+            "https://scontent.fgua1-3.fna.fbcdn.net/v/t39.30808-6/275484369_146707454487942_4691892398623405253_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ZNpDKAsO5nMAX-QwYUE&tn=a8phIsuWM6XkW9N0&_nc_ht=scontent.fgua1-3.fna&oh=00_AT_HkbgxS1Gj40GosmXs8SRXMef7VgwgE3diHYpqVL2Qbw&oe=62A6BE62"
+
+        binding.civDrawerUserPhotoToolbar.loadByResource(userPhoto)
+        binding.draweeUserPhotoNav.loadByResource(userPhoto)
     }
 }
