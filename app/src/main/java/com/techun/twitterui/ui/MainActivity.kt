@@ -13,10 +13,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.techun.twitterui.R
 import com.techun.twitterui.databinding.ActivityMainBinding
+import com.techun.twitterui.ui.drawerNavigationView.Constants
 import com.techun.twitterui.ui.drawerNavigationView.NavigationItemModel
 import com.techun.twitterui.ui.drawerNavigationView.NavigationRVAdapter
 import com.techun.twitterui.ui.drawerNavigationView.ui.*
 import com.techun.twitterui.utils.goToActivity
+import com.techun.twitterui.ui.drawerNavigationView.Constants.*
+import com.techun.twitterui.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myToggle: ActionBarDrawerToggle
     private lateinit var myDrawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
+    private var fabButtonStates: Constants = HOME
 
     @Inject
     lateinit var firstOptionesDrawer: NavigationRVAdapter
@@ -90,38 +94,80 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.nav_home -> {
+                    fabButtonStates = HOME
                     binding.imgIcon.visibility = View.VISIBLE
                     binding.tvToolbar.visibility = View.GONE
                     binding.etToolbar.visibility = View.GONE
-                }
-                R.id.nav_reconding -> {
-                    binding.imgIcon.visibility = View.GONE
-                    binding.etToolbar.visibility = View.GONE
-                    binding.tvToolbar.visibility = View.VISIBLE
-                    binding.tvToolbar.text = getString(R.string.twitter)
-                }
-                R.id.nav_notification -> {
-                    binding.imgIcon.visibility = View.GONE
-                    binding.etToolbar.visibility = View.GONE
-                    binding.tvToolbar.visibility = View.VISIBLE
-                    binding.tvToolbar.text = getString(R.string.notification)
+                    binding.fabCompose.setImageDrawable(
+                        resources.getDrawable(
+                            R.drawable.ic_add,
+                            null
+                        )
+                    )
                 }
                 R.id.nav_search -> {
+                    fabButtonStates = SEARCH
                     binding.imgIcon.visibility = View.GONE
                     binding.tvToolbar.visibility = View.GONE
                     binding.etToolbar.visibility = View.VISIBLE
                     binding.etToolbar.text = "Search Twitter"
+                    binding.fabCompose.setImageDrawable(
+                        resources.getDrawable(
+                            R.drawable.ic_add,
+                            null
+                        )
+                    )
+                }
+                R.id.nav_reconding -> {
+                    fabButtonStates = AUDIO
+                    binding.imgIcon.visibility = View.GONE
+                    binding.etToolbar.visibility = View.GONE
+                    binding.tvToolbar.visibility = View.VISIBLE
+                    binding.tvToolbar.text = getString(R.string.twitter)
+                    binding.fabCompose.setImageDrawable(
+                        resources.getDrawable(
+                            R.drawable.ic_audio,
+                            null
+                        )
+                    )
+                }
+                R.id.nav_notification -> {
+                    fabButtonStates = NOTIFICATIONS
+                    binding.imgIcon.visibility = View.GONE
+                    binding.etToolbar.visibility = View.GONE
+                    binding.tvToolbar.visibility = View.VISIBLE
+                    binding.tvToolbar.text = getString(R.string.notification)
+                    binding.fabCompose.setImageDrawable(
+                        resources.getDrawable(
+                            R.drawable.ic_add,
+                            null
+                        )
+                    )
                 }
                 R.id.nav_inbox -> {
+                    fabButtonStates = INBOX
                     binding.imgIcon.visibility = View.GONE
                     binding.tvToolbar.visibility = View.GONE
                     binding.etToolbar.visibility = View.VISIBLE
                     binding.etToolbar.text = "Search Direct Messages"
+                    binding.fabCompose.setImageDrawable(
+                        resources.getDrawable(
+                            R.drawable.ic_mark_email,
+                            null
+                        )
+                    )
                 }
                 else -> {
+                    fabButtonStates = HOME
                     binding.imgIcon.visibility = View.GONE
                     binding.tvToolbar.visibility = View.GONE
                     binding.etToolbar.visibility = View.GONE
+                    binding.fabCompose.setImageDrawable(
+                        resources.getDrawable(
+                            R.drawable.ic_add,
+                            null
+                        )
+                    )
                 }
             }
         }
@@ -171,6 +217,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             myDrawerLayout.closeDrawer(navigationView)
+        }
+
+        binding.fabCompose.setOnClickListener {
+            when (fabButtonStates) {
+                HOME -> {toast("Home")}
+                SEARCH -> {toast("Search")}
+                AUDIO -> {toast("Audio")}
+                NOTIFICATIONS -> {toast("Notifications")}
+                INBOX -> {toast("Inbox")}
+            }
         }
     }
 

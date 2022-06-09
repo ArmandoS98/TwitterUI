@@ -57,5 +57,7 @@
     <color name="md_theme_dark_shadow">#000000</color>
     <color name="md_theme_dark_primaryInverse">#00658F</color>
     <color name="search_background">#83DDE3EA</color>
-
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="twitterBlue">#1CA1F1</color>
+    <color name="twitterBlueDarker">#188CD3</color>
 </resources>
