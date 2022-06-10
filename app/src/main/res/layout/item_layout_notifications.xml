@@ -23,39 +23,37 @@
             android:paddingEnd="10dp"
             android:paddingBottom="10dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profilePhoto"
-                android:layout_width="53dp"
-                android:layout_height="53dp"
-                android:src="@drawable/egg"
+            <ImageView
+                android:id="@+id/ivNotifications"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_notification_item"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civUserProfile"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/egg"
+                app:layout_constraintStart_toEndOf="@+id/ivNotifications"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_toEndOf="@id/profilePhoto"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/ivNotifications"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/profilePhoto"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivNotifications"
+                app:layout_constraintTop_toBottomOf="@+id/civUserProfile"
                 tools:text="Smartemboser" />
-
-            <TextView
-                android:id="@+id/tv_username"
-                android:layout_width="@dimen/dp_75"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_toEndOf="@id/tv_name"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textSize="15sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toEndOf="@+id/tv_name"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_tweet_text"
@@ -63,40 +61,15 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_name"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_toEndOf="@id/profilePhoto"
+                android:layout_toEndOf="@id/ivNotifications"
+                android:ellipsize="end"
+                android:maxLines="4"
                 android:textSize="15sp"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profilePhoto"
-                app:layout_constraintTop_toBottomOf="@+id/tv_username"
+                app:layout_constraintStart_toEndOf="@+id/ivNotifications"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
                 tools:text="This is a tweet" />
-
-            <ImageView
-                android:id="@+id/imgPostTwetter"
-                android:layout_width="0dp"
-                android:layout_height="250dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/search"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profilePhoto"
-                app:layout_constraintTop_toBottomOf="@+id/tv_tweet_text"
-                tools:srcCompat="@drawable/anya" />
-
-            <TextView
-                android:id="@+id/tv_tweet_edited"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_tweet_text"
-                android:layout_marginTop="5dp"
-                android:layout_toEndOf="@id/profilePhoto"
-                android:text="@string/edited"
-                android:textColor="@color/twitterBlueDarker"
-                android:textSize="13sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="@+id/tv_tweet_text"
-                app:layout_constraintTop_toBottomOf="@+id/imgPostTwetter" />
 
             <LinearLayout
                 android:id="@+id/llOptionsUser"
@@ -104,14 +77,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_tweet_text"
                 android:layout_marginStart="16dp"
-                android:paddingTop="10dp"
-                android:layout_toEndOf="@id/profilePhoto"
+                android:layout_toEndOf="@id/ivNotifications"
                 android:baselineAligned="false"
                 android:orientation="horizontal"
+                android:paddingTop="10dp"
                 android:weightSum="4"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profilePhoto"
-                app:layout_constraintTop_toBottomOf="@+id/tv_tweet_edited">
+                app:layout_constraintStart_toEndOf="@+id/ivNotifications"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tweet_text">
 
                 <LinearLayout
                     android:id="@+id/llComments"

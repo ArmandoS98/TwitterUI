@@ -10,28 +10,37 @@
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/ic_home.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/ic_messages_fill.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/ic_mic_fill.xml" value="0.28" />
-        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/ic_twitter_retweet.xml" value="0.106" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/messages_selector.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/notification_selector.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/search_edittext.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/drawable/search_selector.xml" value="0.28" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout-v28/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/activity_main.xml" value="0.1632996632996633" />
+        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/activity_main.xml" value="0.3096590909090909" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/custom_toolbar.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/fragment_audio.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/fragment_messages.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/fragment_notifications.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
-        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/item_layout_spaces.xml" value="0.36666666666666664" />
-        <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/itemlayout_tweet.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/layout/row_nav_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/home_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/messages_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/notification_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/TwitterUI/app/src/main/res/menu/search_menu.xml" value="0.14722222222222223" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/drawable/ic_bookmark.xml" value="0.195" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/drawable/ic_notification_item.xml" value="0.195" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/drawable/ic_search.xml" value="0.195" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/drawable/ic_settings.xml" value="0.195" />
         <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/fragment_audio.xml" value="0.25416666666666665" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/fragment_notifications_all.xml" value="0.25416666666666665" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/fragment_notifications_mentions.xml" value="0.2" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/item_layout_notifications.xml" value="0.4" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/item_layout_spaces.xml" value="0.25416666666666665" />
+        <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/itemlayout_tweet.xml" value="0.25416666666666665" />
         <entry key="..\:/GitHub/TwitterUI/app/src/main/res/layout/row_nav_drawer.xml" value="0.25416666666666665" />
       </map>
     </option>

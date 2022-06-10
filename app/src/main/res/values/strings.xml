@@ -23,4 +23,9 @@
     <string name="spaces_going_on_right_now">Spaces going on right now</string>
     <string name="get_these_in_your_calendar">Get these in your calendar</string>
     <string name="people_you_follow_will_be_tuning_in">People you follow will be tuning in</string>
+    <string name="tweet_notifications">Tweet reciente de </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="join_the_nconversation">Join the\nconversation</string>
+    <string name="when_someone_on_twitter_mentions_you_in_a_tweet_or_reply_you_ll_find_it_here">When someone on Twitter mentions you in a Tweet or reply, you\'ll find it here.</string>
 </resources>
