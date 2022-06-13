@@ -8,8 +8,8 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.techun.twitterui.databinding.FragmentAudioBinding
-import com.techun.twitterui.domain.SpaceModel
 import com.techun.twitterui.ui.bottomNavigationView.adapters.spaces.SpacesAdapter
+import com.techun.twitterui.utils.FakeData.audioListData
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -17,36 +17,6 @@ import javax.inject.Inject
 class AudioFragment : Fragment() {
     private var _binding: FragmentAudioBinding? = null
     private val binding get() = _binding!!
-
-    private val lista = listOf(
-        SpaceModel(
-            0,
-            "Tomorrow ata 1:00 PM",
-            "How long should a relationship last before marriage? #Lifeissues",
-            "American footbal NCAA Football",
-            null,
-            "ILLZ NFT",
-            "NFT lover || Crypto King Tech genius|| Buying BTC ETH NFT SHIB."
-        ),
-        SpaceModel(
-            0,
-            "Tomorrow ata 1:00 PM",
-            "Live commitment with IPC",
-            "American footbal NCAA Football",
-            null,
-            "Josh",
-            "An official Twitter account of 'LonelyPop' by @bushrobins y @OxSutdio | Join our discord."
-        ),
-        SpaceModel(
-            0,
-            "Tomorrow ata 1:00 PM",
-            "Tell us a petty reason you refused to date someone? #NaijaConversations",
-            "American footbal NCAA Football",
-            null,
-            "Naija",
-            "An official Twitter account of 'LonelyPop' by @bushrobins y @OxSutdio | Join our discord."
-        )
-    )
 
     @Inject
     lateinit var spacesAdapter: SpacesAdapter
@@ -71,7 +41,7 @@ class AudioFragment : Fragment() {
     }
 
     private fun init() {
-        spacesAdapter.submitList(lista.shuffled())
+        spacesAdapter.submitList(audioListData.shuffled())
     }
 
     private fun recyclerInit() {

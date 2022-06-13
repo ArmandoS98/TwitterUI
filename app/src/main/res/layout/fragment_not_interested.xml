@@ -4,12 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.drawerNavigationView.ui.MomentsActivity"
-    android:background="@color/md_theme_light_onSecondary">
+    tools:context=".ui.drawerNavigationView.ui.topicsUI.NotInterestedFragment">
 
-    <include
-        android:id="@+id/iToolbar"
-        layout="@layout/toolbar" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="0dp"
@@ -25,27 +21,18 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:contentDescription="@string/who_to_follow"
-            android:src="@drawable/moments" />
+            android:src="@drawable/nothing" />
 
         <TextView
             android:id="@+id/tvTitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/waiting_on_a_moment"
+            android:text="@string/nothing_to_see_here_yet"
             android:textColor="@android:color/black"
             android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvTitle2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/moment_are_curated_stores_about_what_s_happening_powered_by_tweets_it_s_easy_to_create_your_own_story_with_twitter_moments_on_twitter_com"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitle1" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

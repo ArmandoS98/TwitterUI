@@ -1,14 +1,20 @@
 package com.techun.twitterui.ui.drawerNavigationView.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.techun.twitterui.R
+import androidx.appcompat.app.AppCompatActivity
+import com.techun.twitterui.databinding.ActivityBookmarksBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class BookmarksActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBookmarksBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bookmarks)
+        binding = ActivityBookmarksBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.iToolbar.topAppBar)
+        supportActionBar?.title = "Bookmarks"
+        binding.iToolbar.topAppBar.setNavigationOnClickListener { finish() }
     }
 }
