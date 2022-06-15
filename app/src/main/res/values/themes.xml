@@ -28,6 +28,7 @@
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_primaryInverse</item>
         <item name="backgroundColor">@color/colorWhite</item>
+        <item name="android:windowActivityTransitions">true</item>
     </style>
 
     <style name="backgroundDay">

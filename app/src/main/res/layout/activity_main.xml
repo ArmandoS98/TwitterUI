@@ -11,91 +11,122 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.google.android.material.appbar.AppBarLayout
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/ablToolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:background="@color/md_theme_light_onSecondary"
-                    android:elevation="8dp"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="?attr/actionBarTheme">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/civDrawerUserPhotoToolbar"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="start"
-                        android:layout_marginEnd="20dp"
-                        android:src="@drawable/anya" />
-
-                    <TextView
-                        android:id="@+id/tvToolbar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:visibility="gone" />
-
-                    <TextView
-                        android:id="@+id/etToolbar"
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@drawable/search_edittext"
-                        android:padding="10dp"
-                        android:textColor="@android:color/black"
-                        android:visibility="gone" />
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed|snap"
+                        app:toolbarId="@layout/toolbar">
 
-                    <ImageView
-                        android:id="@+id/imgIcon"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="5dp"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/logo"
-                        android:textSize="20sp" />
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:background="@color/md_theme_light_onSecondary"
+                            android:elevation="8dp"
+                            android:minHeight="?attr/actionBarSize"
+                            android:theme="?attr/actionBarTheme">
 
-                </androidx.appcompat.widget.Toolbar>
-            </com.google.android.material.appbar.AppBarLayout>
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/civDrawerUserPhotoToolbar"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="start"
+                                android:layout_marginEnd="20dp"
+                                android:src="@drawable/anya" />
+
+                            <TextView
+                                android:id="@+id/tvToolbar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/etToolbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:background="@drawable/search_edittext"
+                                android:padding="10dp"
+                                android:textColor="@android:color/black"
+                                android:visibility="gone" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                               android:layout_marginEnd="10dp">
+
+                                <ImageView
+                                    android:id="@+id/imgIcon"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:layout_gravity="center|center_horizontal|center_vertical"
+                                    android:contentDescription="@string/app_name"
+                                    android:src="@drawable/logo"
+                                    android:textSize="20sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </androidx.appcompat.widget.Toolbar>
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <fragment
+                    android:id="@+id/nav_host_fragment"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="?attr/actionBarSize"
+                    app:defaultNavHost="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:navGraph="@navigation/nav_graph" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="?attr/actionBarSize">
+                android:layout_height="match_parent">
 
-                <View
-                    android:id="@+id/view"
-                    android:layout_width="0dp"
-                    android:layout_height="0.5dp"
-                    android:background="@color/md_theme_dark_secondary"
-                    app:layout_constraintBottom_toTopOf="@+id/nav_host_fragment"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="0dp"
-                    android:layout_height="0.5dp"
-                    android:background="@color/md_theme_dark_secondary"
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_compose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:contentDescription="@string/follow"
+                    android:src="@drawable/ic_add"
                     app:layout_constraintBottom_toTopOf="@+id/nav_view"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:tint="@color/colorWhite" />
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/nav_view"
                     style="@style/Theme.TwitterUI.BottomNav"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="0dp"
                     android:background="@color/md_theme_light_onSecondary"
@@ -104,33 +135,8 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:menu="@menu/bottom_nav_menu" />
-
-                <fragment
-                    android:id="@+id/nav_host_fragment"
-                    android:name="androidx.navigation.fragment.NavHostFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    app:defaultNavHost="true"
-                    app:layout_constraintBottom_toTopOf="@id/nav_view"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:navGraph="@navigation/nav_graph" />
-
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fab_compose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_above="@id/nav_view"
-                    android:layout_alignParentEnd="true"
-                    android:layout_margin="20dp"
-                    android:src="@drawable/ic_add"
-                    app:tint="@color/colorWhite"
-                    app:layout_constraintBottom_toTopOf="@+id/view2"
-                    app:layout_constraintEnd_toEndOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </RelativeLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navigation_view"
@@ -164,7 +170,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/drawee_user_photo_nav"
                         android:layout_marginStart="10dp"
-                        android:text="Smartemboser"
+                        android:text="@string/smartemboser"
                         android:textColor="@android:color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -176,7 +182,7 @@
                         android:layout_below="@id/tv_name"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="5dp"
-                        android:text="ArmandoESmart"
+                        android:text="@string/armandoesmart"
                         android:textSize="14sp" />
 
 
@@ -192,7 +198,7 @@
                             android:id="@+id/tv_followers"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="154"
+                            android:text="@string/_154"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -205,7 +211,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
-                            android:text="Following"
+                            android:text="@string/following"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/tv_followers"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -216,7 +222,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="16dp"
-                            android:text="63"
+                            android:text="@string/_63"
                             android:textColor="@android:color/black"
                             android:textSize="15sp"
                             android:textStyle="bold"
@@ -228,7 +234,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
-                            android:text="Followers"
+                            android:text="@string/followers"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/tvFollowers"
                             app:layout_constraintTop_toTopOf="parent" />

@@ -1,5 +1,9 @@
 package com.techun.twitterui.domain
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class TweetModel(
     var tweetId: Int? = null,
     var tweetBy: Int? = null,
@@ -13,4 +17,4 @@ data class TweetModel(
     var time: Int? = null,
     var image: String? = null,
     var edited: Boolean? = null
-)
+) : Parcelable

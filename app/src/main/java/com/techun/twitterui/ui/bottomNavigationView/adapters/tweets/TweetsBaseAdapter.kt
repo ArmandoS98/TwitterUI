@@ -1,30 +1,82 @@
 package com.techun.twitterui.ui.bottomNavigationView.adapters.tweets
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.techun.twitterui.R
-import com.techun.twitterui.databinding.ItemlayoutTweetBinding
+import com.techun.twitterui.databinding.ItemLayoutTweetBinding
 import com.techun.twitterui.domain.TweetModel
 import com.techun.twitterui.utils.loadByResource
+import com.techun.twitterui.utils.loadImageTweetsByResource
 
-abstract class TweetsBaseAdapter(private val layoutId: Int) :
-    RecyclerView.Adapter<TweetsBaseAdapter.TweetViewHolder>() {
 
-    class TweetViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val binding = ItemlayoutTweetBinding.bind(itemView)
+abstract class TweetsBaseAdapter : RecyclerView.Adapter<TweetsBaseAdapter.TweetViewHolder>() {
+
+    class TweetViewHolder(val binding: ItemLayoutTweetBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun render(tweet: TweetModel) {
             binding.tvCommentsCounter.text = tweet.comments.toString()
             binding.tvRetweetsCounter.text = tweet.reTweets.toString()
             binding.tvLikesCounter.text = tweet.likes.toString()
             binding.tvUsername.text = tweet.username
             binding.tvName.text = tweet.name
-            binding.tvTweetText.text = tweet.text
+            val body = tweet.text
+            /*     val tst = body?.split(" ")?.map { word ->
+                     if (!word.isNullOrEmpty())
+                         if (word.trim().first() == '#' || word.trim().first() == '@') {
+                             val spannableString = SpannableString(word)
+                             spannableString.setSpan(
+                                 StyleSpan(Typeface.BOLD),
+                                 1,
+                                 word.length,
+                                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                             )
+
+                             binding.tvTweetText.text = spannableString
+                         }
+                 }
+     */
+            /* val finalString = SpannableStringBuilder("")
+             val specialText = ForegroundColorSpan(Color.BLUE)
+             body?.split(".*?\\s(#\\w+).*?".toRegex())?.forEach { word ->
+                 if (!word.isNullOrEmpty()) {
+                     if (word.trim().first() == '#' || word.trim().first() == '@') {
+                         val spannableString = SpannableStringBuilder(word)
+                         spannableString.setSpan(
+                             specialText,
+                             1,
+                             word.length,
+                             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+                         )
+
+                         spannableString.append("$spannableString ")
+                         binding.tvTweetText.text = spannableString
+                     } else {
+                         *//*   finalString.append("$word ")
+                           binding.tvTweetText.text = word*//*
+                    }
+                }
+            }
+
+            val YourString = "Today is a beautiful sunny day #sun. Hello my name is Mat #Sweet #Home"
+
+            val REG_EX_TAG =  ".*?\\s(#\\w+).*?"
+            val tagMatcher: Pattern = Pattern.compile(REG_EX_TAG, Pattern.MULTILINE)
+            val m: Matcher = tagMatcher.matcher(YourString)
+            while (m.find()) {
+                for (i in 0 until m.groupCount()) {
+                    println("tag ${i + 1} -> ${m.group(i + 1)}")
+                }
+            }*/
+
+            binding.tvTweetText.text = body
+
+            binding.tvDate.text = "${tweet.time}h"
             binding.tvTweetEdited.visibility = if (tweet.edited!!) VISIBLE else GONE
 
             if (!tweet.userImg.isNullOrEmpty())
@@ -34,7 +86,7 @@ abstract class TweetsBaseAdapter(private val layoutId: Int) :
 
             if (!tweet.image.isNullOrEmpty()) {
                 binding.imgPostTwetter.visibility = VISIBLE
-                binding.imgPostTwetter.loadByResource(tweet.image!!)
+                binding.imgPostTwetter.loadImageTweetsByResource(tweet.image!!)
             } else
                 binding.imgPostTwetter.visibility = GONE
         }
@@ -42,8 +94,8 @@ abstract class TweetsBaseAdapter(private val layoutId: Int) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TweetViewHolder {
         return TweetViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                layoutId,
+            ItemLayoutTweetBinding.inflate(
+                LayoutInflater.from(parent.context),
                 parent,
                 false
             )
@@ -69,14 +121,19 @@ abstract class TweetsBaseAdapter(private val layoutId: Int) :
         set(value) = differ.submitList(value)
 
     protected var onItemClickListener: ((TweetModel) -> Unit)? = null
-    protected var onDeleteClickListener: ((TweetModel) -> Unit)? = null
+    protected var onOptionsClickListener: ((TweetModel) -> Unit)? = null
+    protected var onImageTweetClickListener: ((TweetModel, ImageView) -> Unit)? = null
 
     fun setItemClickListener(listener: (TweetModel) -> Unit) {
         onItemClickListener = listener
     }
 
-    fun setDeleteClickListener(listener: (TweetModel) -> Unit) {
-        onDeleteClickListener = listener
+    fun setOptionsClickListener(listener: (TweetModel) -> Unit) {
+        onOptionsClickListener = listener
+    }
+
+    fun setImageTweetClickListener(listener: (TweetModel,ImageView) -> Unit) {
+        onImageTweetClickListener = listener
     }
 
 }

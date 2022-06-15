@@ -264,7 +264,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         val userPhoto =
-            "https://scontent.fgua1-3.fna.fbcdn.net/v/t39.30808-6/275484369_146707454487942_4691892398623405253_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ZNpDKAsO5nMAX-QwYUE&tn=a8phIsuWM6XkW9N0&_nc_ht=scontent.fgua1-3.fna&oh=00_AT_HkbgxS1Gj40GosmXs8SRXMef7VgwgE3diHYpqVL2Qbw&oe=62A6BE62"
+            "https://pbs.twimg.com/profile_images/1162579639119884288/TLXVnGIA_400x400.jpg"
 
         binding.civDrawerUserPhotoToolbar.loadByResource(userPhoto)
         binding.draweeUserPhotoNav.loadByResource(userPhoto)

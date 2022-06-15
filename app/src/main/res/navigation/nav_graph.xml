@@ -8,26 +8,45 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.techun.twitterui.ui.bottomNavigationView.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_nav_home_to_imageDetailsActivity"
+            app:destination="@id/imageDetailsActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
     <fragment
         android:id="@+id/nav_search"
         android:name="com.techun.twitterui.ui.bottomNavigationView.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search"/>
     <fragment
         android:id="@+id/nav_reconding"
         android:name="com.techun.twitterui.ui.bottomNavigationView.AudioFragment"
-        android:label="fragment_audio"
+        android:label="@string/reconding"
         tools:layout="@layout/fragment_audio" />
     <fragment
         android:id="@+id/nav_notification"
         android:name="com.techun.twitterui.ui.bottomNavigationView.NotificationsFragment"
-        android:label="fragment_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:label="@string/notification"
+        tools:layout="@layout/fragment_notifications"/>
     <fragment
         android:id="@+id/nav_inbox"
         android:name="com.techun.twitterui.ui.bottomNavigationView.MessagesFragment"
-        android:label="fragment_messages"
-        tools:layout="@layout/fragment_messages" />
+        android:label="@string/inbox"
+        tools:layout="@layout/fragment_messages"/>
+
+    <activity
+        android:id="@+id/imageDetailsActivity"
+        android:name="com.techun.twitterui.ui.bottomNavigationView.tweetImageDetails.ImageDetailsActivity"
+        android:label="activity_image_details"
+        tools:layout="@layout/activity_image_details">
+
+        <argument
+            android:name="tweetArgs"
+            app:argType="com.techun.twitterui.domain.TweetModel" />
+    </activity>
+
 </navigation>

@@ -59,4 +59,10 @@
     <string name="your_lists">Your Lists</string>
     <string name="show_more">Show more</string>
     <string name="discover_new_lists">Discover new Lists</string>
+    <string name="smartemboser">Smartemboser</string>
+    <string name="armandoesmart">ArmandoESmart</string>
+    <string name="_154">154</string>
+    <string name="_63">63</string>
+    <string name="followers">Followers</string>
+    <string name="email_card_detail_transition_name">email_card_detail</string>
 </resources>

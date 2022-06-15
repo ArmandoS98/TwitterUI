@@ -31,37 +31,128 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clUserInfo"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_toEndOf="@id/profilePhoto"
-                android:textSize="15sp"
-                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/imgMore"
                 app:layout_constraintStart_toEndOf="@+id/profilePhoto"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Smartemboser" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tv_username"
-                android:layout_width="@dimen/dp_75"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_toEndOf="@id/tv_name"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:textSize="15sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toEndOf="@+id/tv_name"
-                app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/tvDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="HBOMax" />
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_toEndOf="@id/tv_name"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tv_name"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="\@HBOMaxLAPR" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="17h" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--  <TextView
+                  android:id="@+id/tv_name"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="16dp"
+                  android:layout_toEndOf="@id/profilePhoto"
+                  android:textSize="15sp"
+                  android:textStyle="bold"
+                  app:layout_constraintStart_toEndOf="@+id/profilePhoto"
+                  app:layout_constraintTop_toTopOf="parent"
+                  tools:text="Smartemboser" />
+
+              <TextView
+                  android:id="@+id/tv_username"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="8dp"
+                  android:layout_marginEnd="8dp"
+                  android:layout_toEndOf="@id/tv_name"
+                  android:ellipsize="end"
+                  android:maxLines="1"
+                  android:singleLine="true"
+                  android:textSize="15sp"
+                  android:textStyle="normal"
+                  app:layout_constraintStart_toEndOf="@+id/tv_name"
+                  app:layout_constraintTop_toTopOf="parent"
+                  tools:text="\@ArmandoS98" />
+
+              <TextView
+                  android:id="@+id/tvDate"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="8dp"
+                  android:layout_toEndOf="@id/tv_name"
+                  android:ellipsize="end"
+                  android:maxLines="1"
+                  android:singleLine="true"
+                  android:textSize="15sp"
+                  android:textStyle="normal"
+                  app:layout_constraintEnd_toStartOf="@+id/imgMore"
+                  app:layout_constraintStart_toEndOf="@+id/tv_username"
+                  app:layout_constraintTop_toTopOf="parent"
+                  tools:text="17h" />-->
+
+            <ImageButton
+                android:id="@+id/imgMore"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/search"
+                android:padding="0dp"
+                android:src="@drawable/ic_more_vert"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/md_theme_dark_shadow" />
+
 
             <TextView
                 android:id="@+id/tv_tweet_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_name"
+                android:layout_below="@id/clUserInfo"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_toEndOf="@id/profilePhoto"
@@ -69,16 +160,17 @@
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profilePhoto"
-                app:layout_constraintTop_toBottomOf="@+id/tv_username"
+                app:layout_constraintTop_toBottomOf="@+id/clUserInfo"
                 tools:text="This is a tweet" />
 
             <ImageView
                 android:id="@+id/imgPostTwetter"
                 android:layout_width="0dp"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/search"
+                android:transitionName="image_tweet"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profilePhoto"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tweet_text"
@@ -98,26 +190,29 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_tweet_text"
                 app:layout_constraintTop_toBottomOf="@+id/imgPostTwetter" />
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llOptionsUser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_tweet_text"
                 android:layout_marginStart="16dp"
-                android:paddingTop="10dp"
                 android:layout_toEndOf="@id/profilePhoto"
                 android:baselineAligned="false"
                 android:orientation="horizontal"
+                android:paddingTop="10dp"
                 android:weightSum="4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/profilePhoto"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tweet_edited">
 
-                <LinearLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/llComments"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:orientation="horizontal"
                     tools:ignore="UseCompoundDrawables">
 
@@ -137,12 +232,15 @@
                         android:textColor="@color/md_theme_light_outline"
                         android:textSize="13sp"
                         tools:text="1" />
-                </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <LinearLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:orientation="horizontal"
                     tools:ignore="UseCompoundDrawables">
 
@@ -162,12 +260,15 @@
                         android:textColor="@color/md_theme_light_outline"
                         android:textSize="13sp"
                         tools:text="5" />
-                </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <LinearLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:orientation="horizontal"
                     tools:ignore="UseCompoundDrawables">
 
@@ -188,12 +289,15 @@
                         android:textSize="13sp"
                         tools:text="58" />
 
-                </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <RelativeLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <ImageView
                         android:id="@+id/tweet_action_edit"
@@ -202,8 +306,8 @@
                         android:contentDescription="@string/edit"
                         android:src="@drawable/ic_share"
                         app:tint="@color/md_theme_light_outline" />
-                </RelativeLayout>
-            </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View

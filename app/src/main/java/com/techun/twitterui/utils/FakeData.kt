@@ -75,18 +75,20 @@ object FakeData {
             "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"
         )
     )
-    val RockListData = listOf(
+
+    //Home
+    var RockListData = mutableListOf(
         TweetModel(
             0,
             1,
             "Smartemboser",
             "@Armando",
-            "https://scontent.fgua1-3.fna.fbcdn.net/v/t39.30808-6/275484369_146707454487942_4691892398623405253_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ZNpDKAsO5nMAX-QwYUE&tn=a8phIsuWM6XkW9N0&_nc_ht=scontent.fgua1-3.fna&oh=00_AT_HkbgxS1Gj40GosmXs8SRXMef7VgwgE3diHYpqVL2Qbw&oe=62A6BE62",
+            "https://pbs.twimg.com/profile_images/1162579639119884288/TLXVnGIA_400x400.jpg",
             Random.nextInt(0, 999),
             Random.nextInt(0, 999),
             Random.nextInt(0, 999),
             "I have a TextView that I want to limit characters of it. Actually, I can do this but the thing that I'm looking for is how to add three dots (...) at the end of string. This one shows the text has continue. This is my XML but there is no dots although it limit my text.",
-            0,
+            Random.nextInt(1, 24),
             "https://catalyst-ca.net/wp-content/uploads/2021/12/top-programing-languages.jpeg",
             false
         ),
@@ -100,7 +102,7 @@ object FakeData {
             Random.nextInt(0, 999),
             Random.nextInt(0, 999),
             "Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código, se utiliza para desarrollar aplicaciones de todo tipo, ejemplos: Instagram, Netflix, Spotify, Panda 3D, entre otros.\u200B",
-            0,
+            Random.nextInt(1, 24),
             null,
             false
         ),
@@ -114,7 +116,7 @@ object FakeData {
             Random.nextInt(0, 999),
             Random.nextInt(0, 999),
             "La ingeniería eléctrica es el campo de la ingeniería que se ocupa del estudio y la aplicación de la electricidad, electromagnetismo, electromecánica y la electrónica a sistemas eléctricos de potencia.",
-            0,
+            Random.nextInt(1, 24),
             "https://images5.content-hci.com/commimg/myhotcourses/blog-inline/myhc_32056.jpg",
             false
         ),
@@ -128,7 +130,7 @@ object FakeData {
             Random.nextInt(0, 999),
             Random.nextInt(0, 999),
             "Hello World",
-            0,
+            Random.nextInt(1, 24),
             null,
             false
         ),
@@ -142,7 +144,7 @@ object FakeData {
             Random.nextInt(0, 999),
             Random.nextInt(0, 999),
             "Epic Games, Inc. es una empresa de desarrollo de videojuegos estadounidense con sede en Cary, ahora asociada con la compañía china Tencent Holdings.​",
-            0,
+            Random.nextInt(1, 24),
             "https://i.blogs.es/a4d480/epic-games-store/1366_521.jpg",
             false
         ),
@@ -156,7 +158,7 @@ object FakeData {
             Random.nextInt(0, 999),
             Random.nextInt(0, 999),
             "Un robot es una entidad virtual o mecánica artificial. En la práctica, esto es por lo general un sistema electromecánico que, por su apariencia o sus movimientos, ofrece la sensación de tener un propósito propio. ",
-            0,
+            Random.nextInt(1, 24),
             null,
             false
         ),
@@ -170,8 +172,64 @@ object FakeData {
             Random.nextInt(0, 999),
             Random.nextInt(0, 999),
             "– Junio, sorpréndeme. 🙄\n– Qué bonito tu tatuaje, ¿qué significa? 🙄\n– Mijo, ¿Para cuándo un nieto? 🙄🙄🙄",
-            0,
+            Random.nextInt(1, 24),
             "https://pbs.twimg.com/media/FUctQF5WUAAlvIz?format=jpg&name=medium",
+            false
+        ),
+        TweetModel(
+            0,
+            1,
+            "Netflix Latinoamérica",
+            "@NetflixLAT",
+            "https://pbs.twimg.com/profile_images/1322949452047491074/7pBE_7_i_400x400.jpg",
+            Random.nextInt(0, 999),
+            Random.nextInt(0, 999),
+            Random.nextInt(0, 999),
+            "The Umbrella Academy, Peaky Blinders, One Piece, La casa de Papel: Corea… Junio llegó con muchos maratones. \uD83E\uDD29\uD83C\uDF7F",
+            Random.nextInt(1, 24),
+            "https://pbs.twimg.com/media/FULdKtgX0AARAyA?format=jpg&name=4096x4096",
+            false
+        ),
+        TweetModel(
+            0,
+            1,
+            "Netflix Latinoamérica",
+            "@NetflixLAT",
+            "https://pbs.twimg.com/profile_images/1322949452047491074/7pBE_7_i_400x400.jpg",
+            Random.nextInt(0, 999),
+            Random.nextInt(0, 999),
+            Random.nextInt(0, 999),
+            "Vive tu mejor vida después de la muerte. Lana Condor protagoniza ‘Boo, Bitch’, que llega a Netflix el 8 de julio.",
+            Random.nextInt(1, 24),
+            "https://pbs.twimg.com/media/FVJLt0QWYAIklOf?format=jpg&name=4096x4096",
+            false
+        ),
+        TweetModel(
+            0,
+            1,
+            "HBOMax Latin America PR",
+            "@HBOMaxLAPR",
+            "https://pbs.twimg.com/profile_images/1382361077254656000/DdXKmgka_400x400.png",
+            Random.nextInt(0, 999),
+            Random.nextInt(0, 999),
+            Random.nextInt(0, 999),
+            "\uD83C\uDFA5En la 37ª edición de @FICGoficial\n, #HBOMax anuncia #BatmanAzteca: Choque de Imperios. Un largometraje original de animación que sitúa al \uD83E\uDDB8icónico superhéroe de DC con el trasfondo de la cautivadora historia de México. Próximamente en #HBOMax.",
+            Random.nextInt(1, 24),
+            "https://pbs.twimg.com/media/FVOJ7aQXoAAOQFM?format=jpg&name=large",
+            false
+        ),
+        TweetModel(
+            0,
+            1,
+            "HBOMax Latin America PR",
+            "@HBOMaxLAPR",
+            "https://pbs.twimg.com/profile_images/1382361077254656000/DdXKmgka_400x400.png",
+            Random.nextInt(0, 999),
+            Random.nextInt(0, 999),
+            Random.nextInt(0, 999),
+            "#HBOMax está de festejo! \uD83E\uDD73\uD83C\uDF89 Próximo a cumplir su primer aniversario en Latinoamérica, lo celebramos festejando sus grandes logros. #CUMPLEHBOMAX \uD83C\uDF82\uD83C\uDF8A",
+            Random.nextInt(1, 24),
+            "https://pbs.twimg.com/media/FVJv0hbXoAE6ijz?format=jpg&name=large",
             false
         )
     )

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.bottomNavigationView.tweetImageDetails.ImageDetailsActivity">
+
+    <include
+        android:id="@+id/iToolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgPostTwetter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/search"
+        android:transitionName="image_tweet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iToolbar"
+        app:srcCompat="@drawable/anya" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llOptionsUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:baselineAligned="false"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llComments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/tweet_action_reply"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="@string/comment"
+                android:src="@drawable/ic_twitter_comment"
+                app:tint="@color/md_theme_light_outline" />
+
+            <TextView
+                android:id="@+id/tvCommentsCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:textColor="@color/md_theme_light_outline"
+                android:textSize="13sp"
+                tools:text="1" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/tweet_action_retweet"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="@string/retweet"
+                android:src="@drawable/ic_twitter_retweet"
+                app:tint="@color/md_theme_light_outline" />
+
+            <TextView
+                android:id="@+id/tvRetweetsCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:textColor="@color/md_theme_light_outline"
+                android:textSize="13sp"
+                tools:text="5" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/tweet_action_like"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="@string/like"
+                android:src="@drawable/ic_twitter_like_outline"
+                app:tint="@color/md_theme_light_outline" />
+
+            <TextView
+                android:id="@+id/tvLikesCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:textColor="@color/md_theme_light_outline"
+                android:textSize="13sp"
+                tools:text="58" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/tweet_action_edit"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="@string/edit"
+                android:src="@drawable/ic_share"
+                app:tint="@color/md_theme_light_outline" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

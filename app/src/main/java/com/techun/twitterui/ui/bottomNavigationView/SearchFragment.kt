@@ -1,6 +1,8 @@
 package com.techun.twitterui.ui.bottomNavigationView
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.*
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
@@ -41,6 +43,14 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tweetsRefreshLayout.setOnRefreshListener {
+            init()
+            binding.tweetsRefreshLayout.isRefreshing = false
+        }
+     /*   Handler(Looper.getMainLooper()).postDelayed({
+            init()
+            recyclerInit()
+        }, 1000)*/
         init()
         recyclerInit()
     }
@@ -51,10 +61,6 @@ class SearchFragment : Fragment() {
     }
 
     private fun init() {
-        binding.tweetsRefreshLayout.setOnRefreshListener {
-            init()
-            binding.tweetsRefreshLayout.isRefreshing = false
-        }
         trendingAdapter.submitList(trendingListData.shuffled())
         whoToFollows.submitList(whoToFollowListData.shuffled())
         tweetsAdapter.submitList(RockListData.shuffled())
